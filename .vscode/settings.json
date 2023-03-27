@@ -11,5 +11,8 @@
     "Tobe",
     "unplugin",
     "weapp"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
 }
