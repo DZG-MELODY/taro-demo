@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const useAuth = defineStore({
   id: 'auth',
@@ -7,11 +7,11 @@ export const useAuth = defineStore({
   }),
   actions: {
     async login() {
-      this.setIsLogin(true)
-      return
+      this.setIsLogin(true);
+      return;
     },
     setIsLogin(value) {
-      this.isLogin = value
+      this.isLogin = value;
     },
   }
-})
+});

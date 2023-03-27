@@ -1,6 +1,8 @@
 <template>
-  <scroll-view class="index">
-    <view class="card" :key="chat.id" v-for="chat in chats" @click="onClickChat(chat)">
+  <scroll-view class="w-full h-screen bg-white p-0 m-0">
+    <view
+      class="w-full h-15 flex items-center bg-orange-400 text-gray-100 border-b-white border-solid border-0 border-b-2px"
+      :key="chat.id" v-for="chat in chats" @click="onClickChat(chat)">
       <message></message> <text>{{ chat.name }}</text>
     </view>
   </scroll-view>
@@ -11,7 +13,7 @@ import { reactive } from 'vue';
 import Taro from '@tarojs/taro';
 import { Message } from '@nutui/icons-vue-taro';
 export default {
-  name: 'Index',
+  name: 'HomePage',
   components: {
     Message
   },
@@ -20,21 +22,21 @@ export default {
       { id: 1, name: '机器人1' },
       { id: 2, name: '机器人2' },
       { id: 3, name: '机器人3' }
-    ])
+    ]);
 
     const onClickChat = (chat) => {
       console.log(chat.name);
       Taro.navigateTo({
         url: `/pages/chat/chat?id=${chat.id}`
-      })
-    }
+      });
+    };
 
     return {
       chats,
       onClickChat
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">

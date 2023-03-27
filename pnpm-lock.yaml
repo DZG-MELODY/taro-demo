@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.21.3
   '@babel/runtime': ^7.21.0
+  '@dcasia/mini-program-tailwind-webpack-plugin': ^1.5.6
   '@nutui/icons-vue-taro': ^0.0.9
   '@nutui/nutui-taro': ^4.0.4
   '@tarojs/cli': 3.6.2
@@ -45,6 +46,7 @@ specifiers:
   vue: ^3.2.47
   vue-loader: ^17.0.1
   webpack: 5.76.3
+  windicss: ^3.5.6
 
 dependencies:
   '@babel/runtime': 7.21.0
@@ -72,6 +74,7 @@ dependencies:
 
 devDependencies:
   '@babel/core': 7.21.3
+  '@dcasia/mini-program-tailwind-webpack-plugin': 1.5.6
   '@tarojs/cli': 3.6.2_postcss@8.4.21+vue@3.2.47
   '@tarojs/webpack5-runner': 3.6.2_fnjgytyrvws23uowvytaaqrbre
   '@types/webpack-env': 1.18.0
@@ -93,6 +96,7 @@ devDependencies:
   unplugin-vue-components: 0.24.1_vue@3.2.47
   vue-loader: 17.0.1_sd3ogorrmcrsdhfvtgdt76kcmm
   webpack: 5.76.3
+  windicss: 3.5.6
 
 packages:
 
@@ -1513,6 +1517,18 @@ packages:
       postcss-selector-parser: 6.0.11
     dev: true
 
+  /@dcasia/mini-program-tailwind-webpack-plugin/1.5.6:
+    resolution: {integrity: sha512-7txLvEyE4O1UJ1WEg2YpnVmi8LB+HpaKG7hy+oNm0YpZTBHrIrvBPvv1Ict6mYjABc+NweT+9Hw+Q/u/bjlnwg==}
+    dependencies:
+      '@babel/core': 7.21.3
+      '@vivaxy/wxml': 2.1.0
+      postcss: 8.4.21
+      webpack-sources: 1.4.3
+      windicss-webpack-plugin: 1.7.8
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@devexpress/error-stack-parser/2.0.6:
     resolution: {integrity: sha512-fneVypElGUH6Be39mlRZeAu00pccTlf4oVuzf9xPJD1cdEqI8NyAiQua/EW7lZdrbMUbgyXcJmfKPefhYius3A==}
     dependencies:
@@ -2782,6 +2798,10 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
+  /@vivaxy/wxml/2.1.0:
+    resolution: {integrity: sha512-xqnfAB58tl5SPyfkQjrn7D7nuvq7XV9um7QUsjCrvA4X6aZBxcau9sAM47LsQTOpJIVPzjaKIMvq3ul07yZlOA==}
+    dev: true
+
   /@vue/babel-helper-vue-transform-on/1.0.2:
     resolution: {integrity: sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==}
     dev: true
@@ -2984,6 +3004,30 @@ packages:
     dependencies:
       '@webassemblyjs/ast': 1.11.1
       '@xtuc/long': 4.2.2
+    dev: true
+
+  /@windicss/config/1.8.10:
+    resolution: {integrity: sha512-O9SsC110b1Ik3YYa4Ck/0TWuCo7YFfA9KDrwD5sAeqscT5COIGK1HszdCT3oh0MJFej2wNrvpfyW9h6yQaW6PA==}
+    dependencies:
+      debug: 4.3.4
+      jiti: 1.18.2
+      windicss: 3.5.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@windicss/plugin-utils/1.8.10:
+    resolution: {integrity: sha512-Phqk5OW1w+Mv+ry6t7BzAeDq3aMhbI94gR49j9vQCufFfDGCHndhhjtMK0sBv+NPJUsIAIh6qayb1iwBCXUGrw==}
+    dependencies:
+      '@antfu/utils': 0.7.2
+      '@windicss/config': 1.8.10
+      debug: 4.3.4
+      fast-glob: 3.2.12
+      magic-string: 0.27.0
+      micromatch: 4.0.5
+      windicss: 3.5.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@xtuc/ieee754/1.2.0:
@@ -6564,6 +6608,11 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
+  /get-port/6.1.2:
+    resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
   /get-proxy/2.1.0:
     resolution: {integrity: sha512-zmZIaQTWnNQb4R4fJUEp/FC51eZsc6EkErspy3xtIYStaq8EB/hDIWipxsal+E8rz0qD7f2sL/NA9Xee4RInJw==}
     engines: {node: '>=4'}
@@ -7803,6 +7852,11 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /jiti/1.18.2:
+    resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
+    hasBin: true
+    dev: true
+
   /joi/17.9.1:
     resolution: {integrity: sha512-FariIi9j6QODKATGBrEX7HZcja8Bsh3rfdGYy/Sb65sGlZWK/QWesU1ghk7aJWDj95knjXlQfSmzFSPPkLVsfw==}
     dependencies:
@@ -8363,6 +8417,13 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+
+  /magic-string/0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
 
   /magic-string/0.30.0:
     resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
@@ -9402,6 +9463,10 @@ packages:
   /path-type/4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
+    dev: true
+
+  /pathe/1.1.0:
+    resolution: {integrity: sha512-ODbEPR0KKHqECXW1GoxdDb+AZvULmXjVPy4rt+pGo2+TnjJTIPJQSVS6N63n8T2Ip+syHhbn52OewKicV0373w==}
     dev: true
 
   /pend/1.2.0:
@@ -12364,6 +12429,13 @@ packages:
     dependencies:
       lodash: 4.17.21
 
+  /webpack-sources/1.4.3:
+    resolution: {integrity: sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==}
+    dependencies:
+      source-list-map: 2.0.1
+      source-map: 0.6.1
+    dev: true
+
   /webpack-sources/2.3.1:
     resolution: {integrity: sha512-y9EI9AO42JjEcrTJFOYmVywVZdKVUfOvDUPsJea5GIr1JOEGFVqwlY2K098fFoIjOkDzHn2AjRvM8dsBZu+gCA==}
     engines: {node: '>=10.13.0'}
@@ -12524,6 +12596,27 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       string-width: 4.2.3
+    dev: true
+
+  /windicss-webpack-plugin/1.7.8:
+    resolution: {integrity: sha512-wjKczM/20gOaIaDQfdWV1M6dWAKKp/JQDuUmIEvDopmuo3ereUFVFnGxIjyKAu9U4U7RdcZGUwzL/+bJtIn+pA==}
+    dependencies:
+      '@windicss/plugin-utils': 1.8.10
+      debug: 4.3.4
+      get-port: 6.1.2
+      loader-utils: 2.0.4
+      lodash: 4.17.21
+      pathe: 1.1.0
+      webpack-virtual-modules: 0.5.0
+      windicss: 3.5.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /windicss/3.5.6:
+    resolution: {integrity: sha512-P1mzPEjgFMZLX0ZqfFht4fhV/FX8DTG7ERG1fBLiWvd34pTLVReS5CVsewKn9PApSgXnVfPWwvq+qUsRwpnwFA==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: true
 
   /word-wrap/1.2.3:

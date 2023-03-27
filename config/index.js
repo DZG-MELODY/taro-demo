@@ -9,19 +9,19 @@ const NutUIResolver = () => {
         name: partialName,
         from: '@nutui/nutui-taro',
         sideEffects: `@nutui/nutui-taro/dist/packages/${partialName.toLowerCase()}/style`
-      }
+      };
     }
-  }
-}
+  };
+};
 
 const config = {
   projectName: 'taro-demo',
   date: '2023-3-24',
   designWidth(input) {
     if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
-      return 375
+      return 375;
     }
-    return 750
+    return 750;
   },
   deviceRatio: {
     640: 2.34 / 2,
@@ -34,7 +34,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['tarojs-router-next-plugin', 'taro-plugin-pinia', '@tarojs/plugin-html'],
+  plugins: ['tarojs-router-next-plugin', ['@dcasia/mini-program-tailwind-webpack-plugin/dist/taro'], 'taro-plugin-pinia', '@tarojs/plugin-html'],
   defineConstants: {
   },
   copy: {
@@ -58,7 +58,7 @@ const config = {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(Components({
         resolvers: [NutUIResolver()]
-      }))
+      }));
     },
     postcss: {
       pxtransform: {
@@ -86,7 +86,7 @@ const config = {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(Components({
         resolvers: [NutUIResolver()]
-      }))
+      }));
     },
     publicPath: '/',
     staticDirectory: 'static',
@@ -106,11 +106,11 @@ const config = {
       }
     }
   }
-}
+};
 
 module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+    return merge({}, config, require('./dev'));
   }
-  return merge({}, config, require('./prod'))
-}
+  return merge({}, config, require('./prod'));
+};

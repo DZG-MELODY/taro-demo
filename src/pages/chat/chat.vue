@@ -1,26 +1,24 @@
 <template>
-  <view class="chat-container">
-    <view class="chat-content">
-      <scroll-view>
-        <template v-for="(content, index) in contents" :key="index">
-          <view v-if="content.type === 'role'" class="content-role">
-            <view>
-              <message></message>
-            </view>
-            <text class="content">{{ content.content }}</text>
+  <view class="h-screen bg-white">
+    <scroll-view class="h-[90vh] bg-gray-300">
+      <template v-for="(content, index) in contents" :key="index">
+        <view v-if="content.type === 'role'" class="content-role">
+          <view>
+            <message></message>
           </view>
-          <view v-else class="content-self">
-            <text class="content">{{ content.content }}</text>
-            <view>
-              <people></people>
-            </view>
+          <text class="content">{{ content.content }}</text>
+        </view>
+        <view v-else class="content-self">
+          <text class="content">{{ content.content }}</text>
+          <view class="w-10 h-10">
+            <open-data type="userAvatarUrl"></open-data>
           </view>
-        </template>
-      </scroll-view>
-    </view>
-    <view class="chat-input">
-      <nut-textarea class="chat-words" placeholder="请输入聊天内容" text-align="center" v-model="sendMsg"></nut-textarea>
-      <nut-button @click="onSendClick">send</nut-button>
+        </view>
+      </template>
+    </scroll-view>
+    <view class="fixed w-full h-[10vh] flex items-center px-1">
+      <input class="flex-1 bg-gray-200" placeholder="" confirm-type="send" v-model="sendMsg" @confirm="onSendClick">
+      <nut-button class="w-4" @click="onSendClick">send</nut-button>
     </view>
   </view>
 </template>
@@ -28,15 +26,22 @@
 <script>
 import { reactive, ref } from 'vue';
 import { People, Message } from '@nutui/icons-vue-taro';
+import { getCurrentInstance, setNavigationBarTitle } from '@tarojs/taro';
+
+const app = getCurrentInstance();
 
 export default {
+  name: 'ChatPage',
   components: {
-    People,
     Message
   },
   setup() {
     const title = "会话";
+    const { id } = app?.router?.params;
+    const roleName = `机器人${id || ''}`;
+    setNavigationBarTitle({ title: roleName });
     const contents = reactive([
+      { type: 'role', content: `您好，我是${roleName}` },
       { type: 'role', content: '我们开始聊天吧' }
     ]);
     const sendMsg = ref('');
@@ -47,16 +52,16 @@ export default {
         content: sendMsg.value
       });
       sendMsg.value = '';
-    }
+    };
 
     return {
       title,
       contents,
       sendMsg,
       onSendClick
-    }
+    };
   }
-}
+};
 </script>
 <style lang="scss">
 .chat-container {

@@ -5,12 +5,15 @@
     "nutui",
     "pinia",
     "prebundle",
+    "prefixer",
     "pxtransform",
     "stylelint",
     "tarojs",
     "Tobe",
     "unplugin",
-    "weapp"
+    "weapp",
+    "windi",
+    "windicss"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll": true
