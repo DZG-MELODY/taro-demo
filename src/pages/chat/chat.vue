@@ -18,7 +18,7 @@
     </scroll-view>
     <view class="fixed w-full h-[10vh] flex items-center px-1">
       <input class="flex-1 bg-gray-200" placeholder="" confirm-type="send" v-model="sendMsg" @confirm="onSendClick">
-      <nut-button class="w-4" @click="onSendClick">send</nut-button>
+      <nut-button class="w-3 bg-green-100" @click="onSendClick">send</nut-button>
     </view>
   </view>
 </template>
